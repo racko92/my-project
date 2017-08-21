@@ -24,6 +24,11 @@ export class ContactsComponent {
                 firstName: 'George',
                 lastName: 'Sullivan',
                 email: 'george@doe.com'
+            },
+            {
+                firstName: 'John',
+                lastName: 'Deere',
+                email: 'john@doe.com'
             }
         ];
     }
