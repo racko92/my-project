@@ -2,7 +2,7 @@
 
 
 <ul *ngFor="let contact of contacts" >
-    <li *ngIf="contact.firstName == 'John'">
+    <li>
         <p>
             Name: {{ contact.firstName }} {{ contact.lastName }}
         </p>
@@ -10,4 +10,5 @@
             Email: {{ contact.email }}
         </p>
     </li>
+    <button (click)="remove(contact)">Remove</button>
 </ul>

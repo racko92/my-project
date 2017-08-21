@@ -32,5 +32,8 @@ export class ContactsComponent {
             }
         ];
     }
-
+    remove(contact){
+        const index = this.contacts.indexOf(contact);
+        this.contacts.splice(index, 1);
+    }
 }
