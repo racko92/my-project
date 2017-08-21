@@ -1,8 +1,13 @@
 <h1>Contacts</h1>
 
-<p>
-    Name: {{ contact.firstName }} {{ contact.lastName }}
-</p>
-<p>
-    Email: {{ contact.email }}
-</p>
+
+<ul>
+    <li *ngFor="let contact of contacts">
+        <p>
+            Name: {{ contact.firstName }} {{ contact.lastName }}
+        </p>
+        <p>
+            Email: {{ contact.email }}
+        </p>
+    </li>
+</ul>
