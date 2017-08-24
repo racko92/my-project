@@ -8,11 +8,13 @@ import { ContactsService } from '../../shared/services/contacts.service';
 
 export class ContactsComponent {
 
-    private contacts: any[];
+    private contacts: any = [];
     private filter: string = '';
 
     constructor(contactsService: ContactsService) { 
-        this.contacts = contactsService.getContacts();
+        contactsService.getContacts().subscribe(data => {
+            this.contacts = data;
+        });
     }
     remove(contact){
         const index = this.contacts.indexOf(contact);
