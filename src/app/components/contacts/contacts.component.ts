@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { contacts } from './contacts';
+import { ContactsService } from '../../shared/services/contacts.service';
 
 @Component({
     selector: 'app-contacts',
@@ -9,9 +9,10 @@ import { contacts } from './contacts';
 export class ContactsComponent {
 
     private contacts: any[];
+    private filter: string = '';
 
-    constructor() { 
-        this.contacts = contacts;
+    constructor(contactsService: ContactsService) { 
+        this.contacts = contactsService.getContacts();
     }
     remove(contact){
         const index = this.contacts.indexOf(contact);
