@@ -8,16 +8,19 @@ import { ContactsService } from '../../../shared/services/contacts.service';
 })
 export class ContactDetailsComponent implements OnInit {
 
-  private contact: any;
+  private contact: any = {};
   private filter: string = '';
 
   constructor(private route: ActivatedRoute,
               private contactsService: ContactsService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(()=> {
+    this.route.params.subscribe(() => {
       let id = parseInt(this.route.snapshot.paramMap.get('id'));
-      this.contact = this.contactsService.getContacts().find(item => item['id'] == id)
+      this.contactsService.getContacts().subscribe((data: any[]) => {
+        this.contact = data.find(item => item['id'] == id);
+      });
+      
     })
   }
 
