@@ -9,6 +9,7 @@ import { contacts } from '../contacts';
 export class ContactDetailsComponent implements OnInit {
 
   private contact: any;
+  private filter: string = '';
 
   constructor(private route: ActivatedRoute) { }
 
