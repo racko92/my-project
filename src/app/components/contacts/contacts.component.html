@@ -3,17 +3,17 @@
 <div>
   <div class="form-group">
     <label>First Name:</label>
-    <input #firstName type="text" class="form-control">
+    <input #firstName [(ngModel)]="newContact.firstName" type="text" class="form-control">
   </div>
   <div class="form-group">
     <label>Last Name:</label>
-    <input #lastName type="text" class="form-control">
+    <input #lastName [(ngModel)]="newContact.lastName" type="text" class="form-control">
   </div>
   <div class="form-group">
     <label>Email adress:</label>
-    <input #email type="text" class="form-control">
+    <input #email [(ngModel)]="newContact.email" type="text" class="form-control">
   </div>
-  <button type="button" class="btn btn-primary" (click)="addContact(firstName.value, lastName.value, email.value)">Add Contact</button>
+  <button type="button" class="btn btn-primary" (click)="addContact(newContact)">Add Contact</button>
 </div>
 
 <div class="input-group col-md-5 pl-0 my-lg-4 my-2">
