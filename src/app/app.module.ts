@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CustomFormsModule } from 'ng2-validation'
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -25,6 +26,7 @@ import { ContactDetailsComponent } from './components/contacts/contact-details/c
     AppRoutingModule,
     SharedModule,
     FormsModule,
+    CustomFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
