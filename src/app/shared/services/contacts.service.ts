@@ -11,7 +11,7 @@ export class ContactsService {
   }
 
   public addContact(firstName, lastName, email){
-      return this.http.post('http://localhost:8000/contacts-add.php?aaa=eee',{
+      return this.http.post('http://localhost:8000/contacts-add.php',{
           firstName: firstName,
           lastName: lastName,
           email: email
