@@ -12,6 +12,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ContactDetailsComponent } from './components/contacts/contact-details/contact-details.component';
 import { ContactFormComponent } from './components/contacts/contact-form/contact-form.component';
+import { ContactRowComponent } from './components/contacts/contact-row/contact-row.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ContactFormComponent } from './components/contacts/contact-form/contact
     MessagesComponent, 
     ContactDetailsComponent,
     ContactFormComponent,
+    ContactRowComponent,
     
   ],
   imports: [
@@ -30,7 +32,11 @@ import { ContactFormComponent } from './components/contacts/contact-form/contact
     FormsModule,
     CustomFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
