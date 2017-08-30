@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
 import { Contact } from '../../../shared/models/contact.model';
 
 @Component({
@@ -7,18 +7,27 @@ import { Contact } from '../../../shared/models/contact.model';
 })
 export class ContactRowComponent{
 
+  @Input() index: number;
   @Input() 
   set contactRow(contact: Contact){
     this.contact = contact;
   }
-  
+
   @Output() onEdit = new EventEmitter<Contact>();
   @Output() onRemove = new EventEmitter<Contact>();
 
   private contact: Contact;
+  private oldIndex: number;
 
   constructor() {}
-   
+  
+  ngOnChanges(changes: {[index: string]: SimpleChange}){
+    console.log(changes);
+    if(changes.index.previousValue){
+      this.oldIndex = changes.index.previousValue;
+    }
+  }
+  
   edit(contact: Contact){
     this.onEdit.emit(contact);
   }

@@ -13,12 +13,15 @@
       <th>Name</th>
       <th>Email</th>
       <th>Actions</th>
+      <th>Index</th>
+      <th>Old Index</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let contact of contacts" [contactRow]="contact" 
+    <tr *ngFor="let contact of contacts; let i = index" [contactRow]="contact" 
     (onEdit)="contactForm.edit(contact)" 
-    (onRemove)="contactForm.remove(contact)">
+    (onRemove)="contactForm.remove(contact)"
+    [index]="i">
       
     </tr>
 </table>
