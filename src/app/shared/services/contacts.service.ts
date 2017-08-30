@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from './../models/contact.model';
+
 @Injectable()
+
 export class ContactsService {
 
   constructor(private http: HttpClient) { }
@@ -16,5 +18,13 @@ export class ContactsService {
           lastName: contact.lastName,
           email: contact.email
       });
+  }
+  public editContact(contact: Contact){
+    return this.http.put('http://localhost:8000/contacts-edit.php', {
+        id: contact.id,
+        firstName: contact.firstName,
+        lastName: contact.lastName,
+        email: contact.email
+    })
   }
 }

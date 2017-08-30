@@ -14,12 +14,12 @@ export class ContactFormComponent {
   
   constructor() { }
 
-  addContact(contact: Contact){
+  submitContact(contact: Contact){
     this.onSubmit.emit(contact);
     this.newContact = new Contact();
   }
 
-  edit(contact: Contact){
-    this.newContact = contact;
+  edit(contact: Contact){ 
+    this.newContact = Object.assign({}, contact);
   }
 }
