@@ -19,7 +19,7 @@ export class ContactsComponent {
             this.contacts = data;
         },
         (err:HttpErrorResponse) =>{
-            alert(`Backend returned code ${err.status} with message: ${err.error}`);
+            console.log(`Backend returned code ${err.status} with message: ${err.error}`);
         });
     }
     remove(contact){
@@ -27,12 +27,13 @@ export class ContactsComponent {
         this.contacts.splice(index, 1);
     }
 
+    //addContact premesten u contact-form.component
+
     addContact(newContact){
         this.contactsService.addContact(newContact).
         subscribe(
             contact => {
-                this.contacts.push(contact);
-                this.newContact = new Contact();                
+                this.contacts.push(contact);             
             }
         );
     }
