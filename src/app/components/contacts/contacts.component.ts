@@ -14,7 +14,6 @@ export class ContactsComponent {
     private contacts: any = [];
     private filter: string = '';
     private newContact: Contact = new Contact();
-    private people: Observable<any>;
 
     constructor(private contactsService: ContactsService) { 
         contactsService.getContacts().subscribe(data => {
@@ -23,12 +22,6 @@ export class ContactsComponent {
         (err:HttpErrorResponse) =>{
             console.log(`Backend returned code ${err.status} with message: ${err.error}`);
         });
-
-        this.people = Observable.of([
-            {name: 'Joe'},
-            {name: 'Bob'},
-            {name: 'Susy'}
-        ]);
     }
     remove(contact){
         const index = this.contacts.indexOf(contact);
