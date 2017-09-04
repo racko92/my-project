@@ -13,6 +13,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { ContactDetailsComponent } from './components/contacts/contact-details/contact-details.component';
 import { ContactFormComponent } from './components/contacts/contact-form/contact-form.component';
 import { ContactRowComponent } from './components/contacts/contact-row/contact-row.component';
+import { ContactsService } from './shared/services/contacts.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ContactRowComponent } from './components/contacts/contact-row/contact-r
     CustomFormsModule
   ],
   providers: [
-
+    { provide: 'ContactsService1', useClass: ContactsService },
+    { provide: 'APP_CONFIG_DEFAULT_TITLE', useValue: 'Some default title' },
   ],
   bootstrap: [
     AppComponent
